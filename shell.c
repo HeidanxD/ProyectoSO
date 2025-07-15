@@ -5,6 +5,7 @@
 #include "elf.h"
 #include "mm.h"
 #include "process.h"
+#include "task.h"
 #include "lib.h"
 #include "io.h"
 
