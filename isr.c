@@ -21,16 +21,19 @@ void isr_clock_int(void)
         tic = 0;
         count++;
         
-        /* Mostrar un punto cada segundo para indicar que 
+        /* Mostrar un punto cada 30 segundos para indicar que 
            el sistema está funcionando */
-        if (count % 10 == 0) {
-            putcar('.');
-            show_cursor();
+        if (count % 30 == 0) {
+            /* Solo mostrar dots si no estamos en el shell */
+            // putcar('.');
+            // show_cursor();
         }
     }
     
-    /* Llamar al scheduler */
-    schedule();
+    /* Llamar al scheduler solo si hay tareas cargadas */
+    if (n_proc > 0) {
+        schedule();
+    }
 }
 
 void isr_kbd_int(void)
