@@ -25,6 +25,7 @@ struct command shell_commands[] = {
     {"exec", cmd_exec, "Execute an ELF file"},
     {"ps", cmd_ps, "Show running processes"},
     {"mem", cmd_mem, "Show memory information"},
+    {"tasks", cmd_tasks, "Start background demo tasks"},
     {"reboot", cmd_reboot, "Restart the system"}
 };
 
