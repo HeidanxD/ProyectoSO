@@ -352,6 +352,26 @@ void cmd_mem(int argc, char **argv) {
     print("Heap status: Active\n");
 }
 
+/* Comando: tasks */
+void cmd_tasks(int argc, char **argv) {
+    if (n_proc > 0) {
+        print("Background tasks are already running\n");
+        return;
+    }
+    
+    print("Starting background demo tasks...\n");
+    
+    /* Cargar múltiples tareas */
+    load_task((u32*)0x100000, (u32*)&task1, 0x2000);
+    load_task((u32*)0x200000, (u32*)&task2, 0x2000);
+    load_task((u32*)0x300000, (u32*)&task3, 0x2000);
+    
+    print("Background tasks loaded: ");
+    print_dec(n_proc);
+    print("\n");
+    print("Note: Tasks will run in background and display output\n");
+}
+
 /* Comando: reboot */
 void cmd_reboot(int argc, char **argv) {
     print("Rebooting system...\n");
