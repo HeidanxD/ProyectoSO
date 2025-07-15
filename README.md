@@ -154,8 +154,15 @@ pepin$ write test.txt "Hola"   # Escribir en archivo
 pepin$ exec hello.elf          # Ejecutar programa
 pepin$ ps                      # Ver procesos
 pepin$ mem                     # Ver memoria
+pepin$ tasks                   # Iniciar tareas de demostración
 pepin$ reboot                  # Reiniciar
 ```
+
+### Características Especiales
+- **Shell Interactivo**: Interfaz limpia sin tareas en segundo plano
+- **Multitarea Opcional**: Usa el comando `tasks` para activar demostración
+- **Gestión de Archivos**: Crear, leer, escribir y eliminar archivos
+- **Ejecución de Programas**: Soporte completo para ELF
 
 ## Características Técnicas
 
