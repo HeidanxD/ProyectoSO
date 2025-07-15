@@ -102,25 +102,37 @@ make kernel
 ### 2. Compilar Programas de Usuario
 ```bash
 cd /app/user_programs
+chmod +x build.sh
 ./build.sh
 ```
 
 ### 3. Ejecutar el OS
 
-#### Opción 1: QEMU directo
+#### Opción 1: QEMU directo (Recomendado)
+```bash
+qemu-system-i386 -kernel kernel
+```
+
+#### Opción 2: Con display curses
 ```bash
 qemu-system-i386 -kernel kernel -display curses
 ```
 
-#### Opción 2: Usando Makefile
+#### Opción 3: Usando Makefile
 ```bash
 make run-multiboot
 ```
 
-#### Opción 3: Crear ISO
+#### Opción 4: Crear ISO
 ```bash
 make iso
 make run-iso
+```
+
+### 4. Usar el Script de Prueba
+```bash
+chmod +x test_shell.sh
+./test_shell.sh
 ```
 
 ## Uso del Sistema
