@@ -80,11 +80,12 @@ void shell_run(void) {
                 shell_buffer_pos--;
                 shell_buffer[shell_buffer_pos] = '\0';
                 
-                // Mover cursor hacia atrás
+                // Mover cursor hacia atrás y borrar carácter
                 if (kX > 0) {
                     kX--;
                     putcar(' ');
                     kX--;
+                    show_cursor();
                 }
             }
         } else if (c >= 32 && c <= 126) {
