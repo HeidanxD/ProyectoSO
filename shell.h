@@ -33,6 +33,7 @@ void cmd_write(int argc, char **argv);
 void cmd_exec(int argc, char **argv);
 void cmd_ps(int argc, char **argv);
 void cmd_mem(int argc, char **argv);
+void cmd_tasks(int argc, char **argv);
 void cmd_reboot(int argc, char **argv);
 
 /* Variables globales */
