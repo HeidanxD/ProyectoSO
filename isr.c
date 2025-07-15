@@ -71,33 +71,6 @@ void isr_kbd_int(void)
                 if (c) {
                     /* Agregar al buffer del teclado */
                     kbd_buffer_add(c);
-                    
-                    /* Manejar caracteres especiales para display inmediato */
-                    if (c == '\b') {
-                        /* Backspace */
-                        if (kX > 0) {
-                            kX--;
-                            putcar(' ');
-                            kX--;
-                        }
-                    } else if (c == '\n') {
-                        /* Enter */
-                        putcar('\n');
-                    } else if (c == '\t') {
-                        /* Tab */
-                        kX = (kX + 8) & ~7;
-                        if (kX >= 80) {
-                            kX = 0;
-                            kY++;
-                            if (kY >= 25) {
-                                kY = 24;
-                                scrollup();
-                            }
-                        }
-                    } else {
-                        /* Carácter normal */
-                        putcar(c);
-                    }
                 }
             }
         }
