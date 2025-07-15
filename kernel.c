@@ -118,21 +118,11 @@ int main(void)
     /* Mostrar mensaje de bienvenida */
     print("\n");
     print("===================================\n");
-    print("  Mini Sistema Operativo - Cap 18 \n");
+    print("     Pepin Operating System\n");
     print("===================================\n");
     print("\n");
     print("Sistema multitarea iniciado\n");
-    print("Cargando tareas...\n");
-    
-    /* Cargar múltiples tareas */
-    load_task((u32*)0x100000, (u32*)&task1, 0x2000);
-    load_task((u32*)0x200000, (u32*)&task2, 0x2000);
-    load_task((u32*)0x300000, (u32*)&task3, 0x2000);
-    
-    print("Tareas cargadas: ");
-    print_dec(n_proc);
-    print("\n");
-    print("Iniciando sistema multitarea...\n");
+    print("Interrupciones habilitadas\n");
     
     /* Habilitar interrupciones */
     sti;
@@ -148,16 +138,6 @@ int main(void)
     print("Enabling paging\n");
     print("Interrupts are enable. System is ready !\n");
     print("\n");
-    
-    /* Simular las tareas como en la imagen */
-    print("task2\n");
-    print("task3\n");
-    print("task1\n");
-    print("task2\n");
-    print("task3\n");
-    print("task1\n");
-    
-    print("Done.\n");
     
     /* Inicializar e iniciar el shell */
     shell_init();
